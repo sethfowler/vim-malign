@@ -1,0 +1,77 @@
+*malign.txt* Quickly align text on one line with a column on another line
+
+Author:  Seth Fowler <seth@blackhail.net>         *malign-author*
+License: MIT
+
+INTRODUCTION                                    *malign*
+
+Install using the usual methods. (Pathogen, vim-plug, etc.)
+
+COMMANDS                                        *malign-commands*
+
+                                                *malign-:MAlignThis*
+:MAlignThis                 Mark the current cursor position as the start of the text
+                            you want to align.
+
+                            Since you most frequently want to align with text
+                            on the next or previous line, one of the other
+                            variants of this command is usually more
+                            convenient.
+
+                            This mark is per-buffer.
+
+                                                *malign-:MAlignThisWithPrevLine*
+:MAlignThisWithPrevLine     Mark the current cursor position as the start of the text
+                            you want to align, and move the cursor to the
+                            previous line. This makes it easy to align with a
+                            position on the previous line.
+
+                                                *malign-:MAlignThisWithNextLine*
+:MAlignThisWithNextLine     Mark the current cursor position as the start of the text
+                            you want to align, and move the cursor to the next
+                            line. This makes it easy to align with a position
+                            on the next line.
+
+                                                *malign-:MAlignToHere*
+:MAlignToHere               Shift the text at the position marked by one of
+                            the *:MAlignThis* variants so that it starts at
+                            the column the cursor is currently on. If the
+                            current column is to the right of the marked
+                            column, spaces will be inserted at the marked
+                            position to make things line up. If the current
+                            column is to the left of the marked column,
+                            characters will be deleted to the left of the
+                            market position to line things up correctly.
+
+MAPPINGS                                        *malign-default-mappings*
+
+The following default mappings are provided. Set *g:malign_default_mappings* to
+0 to disable them.
+
+                                                *malign-MK*
+MK                          Mark the current cursor position as the start of
+                            the text you want to align, and move the cursor up
+                            one line. This is equivalent to the
+                            *:MAlignThisWithPrevLine* command.
+
+                                                *malign-MJ*
+MJ                          Mark the current cursor position as the start of
+                            the text you want to align, and move the cursor
+                            down one line. This is equivalent to the
+                            *:MAlignThisWithNextLine* command.
+
+
+                                                *malign-MM*
+MM                          Shift the text at the position marked by *MK* or
+                            *MJ* so that it starts at the column the cursor
+                            is currently on. This is equivalent to the
+                            *:MAlignToHere* command.
+
+ABOUT                                           *malign-about*
+
+Grab the latest version or report a bug on GitHub:
+
+http://github.com/sethfowler/vim-malign
+
+ vim:tw=78:et:ft=help:norl:
+
