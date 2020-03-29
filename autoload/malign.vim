@@ -1,16 +1,6 @@
 function! malign#save_position()
   let b:malign_saved_line_no = line('.')
   let b:malign_saved_col_no = virtcol('.')
-
-  if mode() == 'v' || mode() == 'V'
-    if a:movement == 'k'
-      call setpos('.', [0, line("'<"), virtcol("'<"), 0])
-    elseif a:movement == 'j'
-      call setpos('.', [0, line("'>"), virtcol("'>"), 0])
-    endif
-  endif
-
-  exe 'norm ' . a:movement
 endfunction
 
 function! malign#malign_this()
