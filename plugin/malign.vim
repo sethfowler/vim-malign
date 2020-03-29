@@ -18,7 +18,7 @@ if g:malign_default_mappings
   nnoremap <silent> MJ :MAlignThisWithNextLine<cr>
   nnoremap <silent> MM :MAlignToHere<cr>
 
-  vnoremap <silent> MK :MAlignThisWithPrevLine<cr>
-  vnoremap <silent> MJ :MAlignThisWithNextLine<cr>
-  vnoremap <silent> MM :MAlignToHere<cr>
+  vnoremap <silent> MK :<C-U>MAlignThisWithPrevLine<cr>
+  vnoremap <silent> MJ :<C-U>MAlignThisWithNextLine<cr>
+  vnoremap <silent> MM :<C-U>MAlignToHere<cr>
 endif
